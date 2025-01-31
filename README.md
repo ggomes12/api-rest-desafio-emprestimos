@@ -20,7 +20,7 @@ The project follows a layered architecture pattern, ensuring modularity, etc. Th
 - **Data Transfer Objects (DTOs)**: Defines structured objects to encapsulate data being sent and received.
 - **Exception Handling Layer**: Centralized handling of application exceptions to ensure consistent error responses.
 
-<img src="images/" alt="Architecture Diagram" width="800"/>
+<img src="images/diagrama-emprestimos.png" alt="Architecture Diagram" width="800"/>
 
 ---
 
@@ -37,7 +37,7 @@ The project follows a layered architecture pattern, ensuring modularity, etc. Th
 
 ## Project Structure
 
-<img src="images/project_structure.png" alt="Project Structure" width="600"/>
+<img src="images/estrutura-projeto-emprestimos.PNG" alt="Project Structure" width="600"/>
 
 ---
 
@@ -104,6 +104,6 @@ The API documentation is available at:
 
 <br>
 
-<img src="images/swagger.png" alt="Swagger UI" width="800"/>
+<img src="images/swagger-emprestimos.PNG" alt="Swagger UI" width="800"/>
 ```
 
