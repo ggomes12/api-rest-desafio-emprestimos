@@ -15,6 +15,8 @@ import com.ggomes.api_desafio.api_rest_desafio_emprestimo.dtos.CustomerRequestDT
 import com.ggomes.api_desafio.api_rest_desafio_emprestimo.dtos.LoanResponseDTO;
 import com.ggomes.api_desafio.api_rest_desafio_emprestimo.services.LoanService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -26,6 +28,12 @@ public class LoanController {
 	private LoanService loanService;
 
     @PostMapping
+    @Operation(
+            summary = "Determines the loans available to a customer",
+            description = "This endpoint receives information from the customer and returns which types of loans it can access, including interest rates."
+        )
+    @ApiResponse(responseCode = "200", description = "Returns the customer's name and the list of loans available.")
+        
     public ResponseEntity<Map<String, Object>> getEligibleLoans(@RequestBody CustomerRequestDTO dto) {
     	
         List<LoanResponseDTO> loans = loanService.determineLoans(dto);
