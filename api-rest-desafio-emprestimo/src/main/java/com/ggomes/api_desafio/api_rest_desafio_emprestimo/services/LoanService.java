@@ -20,7 +20,7 @@ public class LoanService{
 		
 		if (income <= 3000) {
 			loans.add(new LoanResponseDTO("PERSONAL", 4));
-			loans.add(new LoanResponseDTO("GUARATEED", 3));
+			loans.add(new LoanResponseDTO("GUARANTEED", 3));
 		}
 		
 		if (income <= 5000) {
@@ -29,7 +29,7 @@ public class LoanService{
 		
 		if (income > 3000 && income <= 5000 && age < 30 && "SP".equalsIgnoreCase(location)) {
 			loans.add(new LoanResponseDTO("PERSONAL", 4));
-			loans.add(new LoanResponseDTO("GUARATEED", 3));
+			loans.add(new LoanResponseDTO("GUARANTEED", 3));
 		}
 		
 		return loans;

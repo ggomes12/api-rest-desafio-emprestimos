@@ -11,6 +11,7 @@ import lombok.Setter;
 @Setter
 public class CustomerRequestDTO {
     private int age;
+    private String name;
     private int income;
     private String location;
 }
