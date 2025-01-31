@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.ggomes.api_desafio.api_rest_desafio_emprestimo.dtos.CustomerRequestDTO;
 import com.ggomes.api_desafio.api_rest_desafio_emprestimo.dtos.LoanResponseDTO;
+import com.ggomes.api_desafio.api_rest_desafio_emprestimo.exceptions.UnprocessableEntity;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -15,6 +16,15 @@ import lombok.extern.slf4j.Slf4j;
 public class LoanService{
 
 	public List<LoanResponseDTO> determineLoans(CustomerRequestDTO dto) {
+		
+		 if (dto.getCpf() == null || dto.getCpf().isEmpty()) {
+	            throw new UnprocessableEntity("The CPF cannot be empty.");
+	        }
+		 
+        if (dto.getIncome() < 0) {
+            throw new UnprocessableEntity("The income cannot be negative.");
+        }
+		
 		int age = dto.getAge();
 		int income = dto.getIncome();
 		String location = dto.getLocation();
